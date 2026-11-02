@@ -1,0 +1,59 @@
+{
+  "name": "Pneuservis Bronsky",
+  "phone": "0948 178 564",
+  "email": "",
+  "street": "Mostová 195",
+  "town": "Čierny Brod",
+  "facebook": "",
+  "map_query": "Pneuservis Bronsky, Mostová 195, Čierny Brod",
+  "hero_kicker": "Pneuservis · Mostová 195",
+  "hero_title": "Prezujeme, zvaríme, vyleštíme.",
+  "hero_text": "Výmena a uskladnenie pneumatík, zváranie plastov a regenerácia svetlometov. Malá dielňa, kde sa vaše auto nestratí v rade.",
+  "seo_title": "Pneuservis Bronsky – prezúvanie, uskladnenie pneumatík, zváranie plastov",
+  "seo_description": "Pneuservis Bronsky na Mostovej 195: výmena a uskladnenie pneumatík, oprava defektov, zváranie plastov a regenerácia svetlometov. Objednajte sa telefonicky.",
+  "hours": [
+    {
+      "day": "Pondelok",
+      "closed": false,
+      "open": "08:00",
+      "close": "17:00"
+    },
+    {
+      "day": "Utorok",
+      "closed": false,
+      "open": "08:00",
+      "close": "17:00"
+    },
+    {
+      "day": "Streda",
+      "closed": false,
+      "open": "08:00",
+      "close": "17:00"
+    },
+    {
+      "day": "Štvrtok",
+      "closed": false,
+      "open": "08:00",
+      "close": "17:00"
+    },
+    {
+      "day": "Piatok",
+      "closed": false,
+      "open": "08:00",
+      "close": "17:00"
+    },
+    {
+      "day": "Sobota",
+      "closed": false,
+      "open": "08:00",
+      "close": "12:00"
+    },
+    {
+      "day": "Nedeľa",
+      "closed": true,
+      "open": "",
+      "close": ""
+    }
+  ],
+  "hours_note": "V sezóne prezúvania odporúčame objednať sa vopred telefonicky."
+}

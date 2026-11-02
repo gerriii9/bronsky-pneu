@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Administrácia – Pneuservis Bronsky</title>
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+  <script src="https://unpkg.com/decap-cms@^3.6.0/dist/decap-cms.js"></script>
+  <script>
+    // po prihlásení zostaň v administrácii
+    if (window.netlifyIdentity) {
+      netlifyIdentity.on("init", (user) => {
+        if (!user) netlifyIdentity.on("login", () => { document.location.href = "/admin/"; });
+      });
+    }
+  </script>
+</body>
+</html>

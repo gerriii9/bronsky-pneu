@@ -1,0 +1,48 @@
+{
+  "hotspots": {
+    "tires": { "label": "Výmena pneumatík", "sub": "prezutie, vyváženie, defekty" },
+    "lights": { "label": "Regenerácia svetlometov", "sub": "čisté svetlo za 1–2 hodiny" },
+    "plastics": { "label": "Zváranie plastov", "sub": "nárazníky, držiaky, kryty" }
+  },
+  "tires": {
+    "title": "Výmena pneumatík",
+    "text": "Sezónne prezutie letných a zimných pneumatík, vyváženie kolies a oprava defektov. Na zdviháku sa auto nezdrží dlhšie, než je nutné.",
+    "points": ["Prezutie pneumatík na diskoch aj bez diskov", "Vyváženie kolies", "Oprava defektov", "Kontrola tlaku a stavu dezénu"]
+  },
+  "storage": {
+    "title": "Uskladnenie pneumatík",
+    "text": "Pneumatiky vám umyjeme, ošetríme impregnáciou a uskladníme do ďalšej sezóny. Doma nezaberajú miesto a pri prezutí sú pripravené.",
+    "included": ["Umytie", "Impregnácia"],
+    "prices": [
+      { "title": "Pneumatiky s diskami", "price": "25 €", "note": "6,25 € / ks" },
+      { "title": "Len pneumatiky", "price": "10 €", "note": "" },
+      { "title": "Len disky", "price": "16 €", "note": "" }
+    ],
+    "price_note": "Ceny sú za sadu 4 ks a platia do nasledujúcej sezóny."
+  },
+  "plastics": {
+    "title": "Zváranie plastov",
+    "text": "Prasknutý nárazník alebo zlomený držiak netreba hneď vyhadzovať. Plast zvaríme a spevníme, spoj je pevný ako pôvodný materiál a oprava vyjde lacnejšie než nový diel.",
+    "repairs": ["Praskliny, zlomeniny, diery", "Nárazníky, držiaky, kryty, nádrže", "Auto, moto, poľnohospodárstvo, priemysel"],
+    "materials": ["PP", "PE", "ABS", "PA (nylon)", "PVC"],
+    "steps": [
+      { "title": "Príprava", "text": "Diel dôkladne očistíme a pripravíme na zváranie." },
+      { "title": "Zváranie", "text": "Špeciálnou technikou plast zvaríme do pôvodného stavu." },
+      { "title": "Spevnenie", "text": "Spoj je pevný, odolný voči nárazom a vibráciám." },
+      { "title": "Dokončenie", "text": "Diel upravíme a je pripravený na použitie." }
+    ]
+  },
+  "lights": {
+    "title": "Regenerácia svetlometov",
+    "text": "Zažltnuté a matné svetlomety svietia slabšie a auto s nimi pôsobí staršie. Odstránime oxidáciu, zažltnutie aj škrabance a vrátime im pôvodnú priehľadnosť.",
+    "points": ["Lepšia viditeľnosť v noci", "Lacnejšie ako nové svetlomety", "Hotové zvyčajne do 1–2 hodín", "Vyšší dojem pri predaji auta"]
+  },
+  "prices": [
+    { "item": "Prezutie – plechové disky", "price": "" },
+    { "item": "Prezutie – hliníkové disky", "price": "" },
+    { "item": "SUV a dodávky", "price": "" },
+    { "item": "Oprava defektu", "price": "" },
+    { "item": "Regenerácia svetlometov (pár)", "price": "" },
+    { "item": "Zváranie plastov", "price": "podľa rozsahu" }
+  ]
+}

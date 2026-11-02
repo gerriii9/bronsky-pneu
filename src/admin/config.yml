@@ -1,0 +1,147 @@
+backend:
+  name: git-gateway
+  branch: main
+  commit_messages:
+    update: "Úprava: {{slug}}"
+
+# Rozhranie administrácie (čeština – slovenčina v Decap CMS zatiaľ nie je)
+locale: cs
+
+media_folder: "src/img/uploads"
+public_folder: "/img/uploads"
+
+site_url: "/"
+logo_url: "/img/logo-600.png"
+
+collections:
+  - name: "obsah"
+    label: "Obsah webu"
+    editor:
+      preview: false
+    files:
+      - name: "kontakt"
+        label: "Kontakt a otváracie hodiny"
+        file: "content/site.json"
+        format: "json"
+        fields:
+          - { name: "name", label: "Názov prevádzky", widget: "string" }
+          - { name: "phone", label: "Telefón", widget: "string" }
+          - { name: "email", label: "E-mail (nepovinné)", widget: "string", required: false }
+          - { name: "street", label: "Ulica a číslo", widget: "string" }
+          - { name: "town", label: "Obec", widget: "string" }
+          - { name: "facebook", label: "Odkaz na Facebook", widget: "string", required: false }
+          - { name: "map_query", label: "Hľadanie na mape (názov + adresa)", widget: "string" }
+          - label: "Otváracie hodiny"
+            name: "hours"
+            widget: "list"
+            allow_add: false
+            allow_delete: false
+            allow_reorder: false
+            summary: "{{fields.day}}: {{fields.open}} – {{fields.close}}"
+            fields:
+              - { name: "day", label: "Deň", widget: "string" }
+              - { name: "closed", label: "Zatvorené", widget: "boolean", default: false }
+              - { name: "open", label: "Otvára (napr. 08:00)", widget: "string", required: false, pattern: ['^$|^\d{2}:\d{2}$', "Zadajte čas v tvare 08:00"] }
+              - { name: "close", label: "Zatvára (napr. 17:00)", widget: "string", required: false, pattern: ['^$|^\d{2}:\d{2}$', "Zadajte čas v tvare 17:00"] }
+          - { name: "hours_note", label: "Poznámka pod hodinami", widget: "string", required: false }
+          - { name: "hero_kicker", label: "Úvod – malý nadpis", widget: "string" }
+          - { name: "hero_title", label: "Úvod – hlavný nadpis", widget: "string" }
+          - { name: "hero_text", label: "Úvod – text", widget: "text" }
+          - { name: "seo_title", label: "Názov stránky pre Google", widget: "string" }
+          - { name: "seo_description", label: "Popis pre Google", widget: "text" }
+
+      - name: "sluzby"
+        label: "Služby a cenník"
+        file: "content/services.json"
+        format: "json"
+        fields:
+          - label: "Popisky na fotke auta"
+            name: "hotspots"
+            widget: "object"
+            collapsed: true
+            fields:
+              - label: "1 – Pneumatiky"
+                name: "tires"
+                widget: "object"
+                fields: [{ name: "label", label: "Nadpis", widget: "string" }, { name: "sub", label: "Podnadpis", widget: "string" }]
+              - label: "2 – Svetlomety"
+                name: "lights"
+                widget: "object"
+                fields: [{ name: "label", label: "Nadpis", widget: "string" }, { name: "sub", label: "Podnadpis", widget: "string" }]
+              - label: "3 – Plasty"
+                name: "plastics"
+                widget: "object"
+                fields: [{ name: "label", label: "Nadpis", widget: "string" }, { name: "sub", label: "Podnadpis", widget: "string" }]
+          - label: "Výmena pneumatík"
+            name: "tires"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { name: "title", label: "Nadpis", widget: "string" }
+              - { name: "text", label: "Text", widget: "text" }
+              - { name: "points", label: "Body", widget: "list", field: { name: "point", label: "Bod", widget: "string" } }
+          - label: "Uskladnenie pneumatík"
+            name: "storage"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { name: "title", label: "Nadpis", widget: "string" }
+              - { name: "text", label: "Text", widget: "text" }
+              - { name: "included", label: "V cene", widget: "list", field: { name: "item", label: "Položka", widget: "string" } }
+              - label: "Ceny"
+                name: "prices"
+                widget: "list"
+                summary: "{{fields.title}} – {{fields.price}}"
+                fields:
+                  - { name: "title", label: "Položka", widget: "string" }
+                  - { name: "price", label: "Cena (napr. 25 €)", widget: "string" }
+                  - { name: "note", label: "Poznámka (napr. 6,25 € / ks)", widget: "string", required: false }
+              - { name: "price_note", label: "Poznámka pod cenníkom", widget: "string", required: false }
+          - label: "Ďalšie služby – cenník"
+            name: "prices"
+            widget: "list"
+            summary: "{{fields.item}} – {{fields.price}}"
+            hint: "Ak cenu necháte prázdnu, zobrazí sa „na otázku“."
+            fields:
+              - { name: "item", label: "Služba", widget: "string" }
+              - { name: "price", label: "Cena", widget: "string", required: false }
+          - label: "Zváranie plastov"
+            name: "plastics"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { name: "title", label: "Nadpis", widget: "string" }
+              - { name: "text", label: "Text", widget: "text" }
+              - { name: "repairs", label: "Čo opravujeme", widget: "list", field: { name: "item", label: "Položka", widget: "string" } }
+              - { name: "materials", label: "Materiály", widget: "list", field: { name: "item", label: "Materiál", widget: "string" } }
+              - label: "Postup"
+                name: "steps"
+                widget: "list"
+                summary: "{{fields.title}}"
+                fields:
+                  - { name: "title", label: "Krok", widget: "string" }
+                  - { name: "text", label: "Popis", widget: "string" }
+          - label: "Regenerácia svetlometov"
+            name: "lights"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { name: "title", label: "Nadpis", widget: "string" }
+              - { name: "text", label: "Text", widget: "text" }
+              - { name: "points", label: "Výhody", widget: "list", field: { name: "point", label: "Bod", widget: "string" } }
+
+      - name: "galeria"
+        label: "Fotky dielne"
+        file: "content/gallery.json"
+        format: "json"
+        fields:
+          - { name: "title", label: "Malý nadpis", widget: "string" }
+          - { name: "text", label: "Text", widget: "text" }
+          - label: "Fotky"
+            name: "photos"
+            widget: "list"
+            hint: "Prvá fotka sa zobrazí najväčšia. Ideálne 3 fotky."
+            summary: "{{fields.alt}}"
+            fields:
+              - { name: "image", label: "Fotka", widget: "image" }
+              - { name: "alt", label: "Popis fotky", widget: "string" }

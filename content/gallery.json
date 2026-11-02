@@ -1,0 +1,9 @@
+{
+  "title": "Dielňa",
+  "text": "Nová dielňa s dvojstĺpovým zdvihákom a montážnou technikou na pneumatiky.",
+  "photos": [
+    { "image": "/img/dielna.jpg", "alt": "Dielňa Pneuservis Bronsky zvonku" },
+    { "image": "/img/zdvihak.jpg", "alt": "Auto na zdviháku v dielni" },
+    { "image": "/img/hero-1000.jpg", "alt": "Auto pripravené na prezutie" }
+  ]
+}
